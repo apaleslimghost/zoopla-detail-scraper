@@ -30,6 +30,7 @@ module.exports = id => Promise.resolve(id)
 	description: toMarkdown($('#interested-1').nextAll().map((i,a) => $.html(a)).toArray().join(''), {converters: [
 		{filter: ['span', 'div'], replacement: html => html}
 	]}),
+	floorplan: $('.floorplan-img').attr('src'),
 	agent: {
 		name: $('#listings-agent [itemprop=name]').text(),
 		phone: $('.agent_phone [itemprop=telephone]').text(),
