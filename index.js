@@ -27,7 +27,9 @@ module.exports = id => Promise.resolve(id)
 	price: $('.listing-details-price').text().trim(),
 	address: $('.listing-details-address [itemprop=streetAddress]').text().trim(),
 	images: $('.images-thumb').map((i,a) => $(a).data('photo')).toArray(),
-	description: toMarkdown($('#interested-1').nextAll().map((i,a) => $.html(a)).toArray().join('')),
+	description: toMarkdown($('#interested-1').nextAll().map((i,a) => $.html(a)).toArray().join(''), {converters: [
+		{filter: ['span', 'div'], replacement: html => html}
+	]}),
 	agent: {
 		name: $('#listings-agent [itemprop=name]').text(),
 		phone: $('.agent_phone [itemprop=telephone]').text(),
