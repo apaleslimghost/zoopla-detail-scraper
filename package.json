@@ -1,0 +1,25 @@
+{
+  "name": "zoopla-detail-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quarterto/zoopla-detail-scraper.git"
+  },
+  "keywords": [],
+  "author": "Matt Brennan <matt@153.io> (http://blog.153.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quarterto/zoopla-detail-scraper/issues"
+  },
+  "homepage": "https://github.com/quarterto/zoopla-detail-scraper#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "node-fetch": "^1.5.1",
+    "to-markdown": "^2.0.1"
+  }
+}
