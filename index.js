@@ -37,8 +37,8 @@ module.exports = id => Promise.resolve(id)
 		phone: $('.agent_phone [itemprop=telephone]').text(),
 	},
 	location: {
-		lat: $('meta[property="og:latitude"]').attr('content'),
-		lon: $('meta[property="og:longitude"]').attr('content'),
+		lat: $('meta[property="og:latitude"], meta[itemprop=latitude]').attr('content'),
+		lon: $('meta[property="og:longitude"], meta[itemprop=longitude]').attr('content'),
 	}
 }));
 
