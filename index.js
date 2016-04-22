@@ -26,7 +26,8 @@ module.exports = id => Promise.resolve(id)
 	blurb: $('.listing-details-h1').text().trim(),
 	price: $('.listing-details-price').text().trim(),
 	address: $('.listing-details-address [itemprop=streetAddress]').text().trim(),
-	images: $('.images-thumb').map((i,a) => $(a).data('photo')).toArray(),
+	postcode: $('meta[property="og:postal-code"]').attr('content'),
+	images: $('meta[property="og:image"]').map((i,a) => $(a).attr('content')).toArray(),
 	description: toMarkdown($('#interested-1').nextAll().map((i,a) => $.html(a)).toArray().join(''), {converters: [
 		{filter: ['span', 'div'], replacement: html => html}
 	]}),
@@ -34,6 +35,10 @@ module.exports = id => Promise.resolve(id)
 	agent: {
 		name: $('#listings-agent [itemprop=name]').text(),
 		phone: $('.agent_phone [itemprop=telephone]').text(),
+	},
+	location: {
+		lat: $('meta[property="og:latitude"]').attr('content'),
+		lon: $('meta[property="og:longitude"]').attr('content'),
 	}
 }));
 
