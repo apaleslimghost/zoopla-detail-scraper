@@ -36,3 +36,5 @@ module.exports = id => Promise.resolve(id)
 		phone: $('.agent_phone [itemprop=telephone]').text(),
 	}
 }));
+
+module.exports.toZooplaUrl = toZooplaUrl;
